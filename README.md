@@ -1,7 +1,7 @@
 #Scroll To
 *an easy way to scroll to an anchor*
 
-[See it in action.](http://www.individual11.com/scrollTo "Scroll To Plugin")
+[See it in action.](http://individual11.github.io/Scroll-To/ "Scroll To Plugin")
 
 * * *
 
