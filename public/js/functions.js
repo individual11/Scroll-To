@@ -1,9 +1,3 @@
-var I11 = I11 || {};
-	
-I11.download = function(){
-	location.href = '_/downloads/scrollTo.zip';
-}
-
 //shortcut for document.ready
 $(function(){
 
@@ -27,7 +21,5 @@ $(function(){
 	//grab all the back buttons so they work correctly
 	$('.back').scrollTo();
 	
-	//for the download
-	$('#download').click(I11.download);
 
 });
