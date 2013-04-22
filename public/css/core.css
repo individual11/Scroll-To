@@ -177,6 +177,8 @@ footer a:hover{
 .fr{ float:right;}
 .mr{margin-right:10px;}
 .ml{margin-left:10px;}
+
+a.yellow,
 button.yellow{
 	font-family: 'Bangers', arial, serif;
 	font-size: 20px;
