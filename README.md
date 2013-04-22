@@ -9,7 +9,7 @@
 
 You don't have to change how you setup your HTML at all. Simply set the *href* the same way you normally would. This means everything will still work even if JavaScript is disabled in the browser.
 
-		<a href="#anchorPoint" id="selectorID">Click Here</a>
+	<a href="#anchorPoint" id="selectorID">Click Here</a>
 
 ##JQuery
 
