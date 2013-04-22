@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Scroll To</title>
+	<meta name="description" content="A way to get non-boring placeholder copy." /> 
+ 
+	<meta name="author" content="David Vogeleer" /> 
+	<meta name="copyright" content="Copyright David Vogeleer 2011. All Rights Reserved." /> 
+	<meta name="DC.title" content="Scroll To" /> 
+	<meta name="DC.subject" content="A JQuery plugin to help you scroll to anchors." /> 
+	<meta name="DC.creator" content="David Vogeleer" /> 
+	
+	<link rel="shortcut icon" href="_/img/standard/favicon.png"/> 	
+	<link rel="apple-touch-icon" href="_/img/standard/favicon-ios.png"/> 
+	
+	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+	<link href='_/css/core.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body id="com-individual11">
+	<a href="https://github.com/individual11/Scroll-To"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+	<div id="wrapper">
+		<header>
+			<h1>Scroll To: <p class="about">A simple way to animate to anchors.</p><button id="download" class="yellow fr">Download</button></h1>
+		</header>
+		<div id="content">
+			<div id="docs" class="row readable">
+				<div class="column_1">Scrolling to a spot in an HTML page is pretty simple to do with JQuery, but if you have a lot of IDs on the page to scroll to, the code can get a little messy. This plugin solves that by allowing you to write your anchor tags just as you normally would with the <em>href</em> attribute pointed at the ID you would like to move to (e.g. href="#importantSection".) This means that if JavaScript is turned off, your site will continue to function normally. You can offset the location of where you scroll to, control the speed and override the element ID you are scrolling to all through the plugin.</div>
+			</div>
+			<div class="row">
+				<div class="column_1">
+					<p class="code">&lt;a href=&quot;#spotToGoTo&quot; id=&quot;selector&quot;&gt;Click Here&lt;/a&gt;</p>
+				</div>
+			</div>
+			<div class="row readable">
+				<div class="column_1">
+					<p>The plugin will still set the hash value (i.e. #anchorPoint) like normal so you can still deep link into your page, however for browsers that do not support <em>history.pushState</em>, there may be issues with using <em>offset</em>. This is because for those browsers, you cannot stop the window from firing the <em>onHashChange</em> event, which will then jump to the exact location. If you&apos;re not using <em>offset</em> however, everything will work normally.</p>
+				</div>
+			</div>
+			<div class="row readable">
+				<div class="column_4">
+					<h3>offset</h3>
+					<p class="readable">By default, the plugin will scroll the top of the element you&apos;ve set, but sometimes you might want it to go slightly higher or lower. This parameter will allow you to offset the scroll position positively (down) or negatively (up) by the amount of pixels you set. The default value is <strong>0</strong>.</p>
+				</div>
+				<div class="column_4">
+					<h3>speed</h3>
+					<p class="readable">The plugin uses the <em>animate</em> method in JQuery, so you can pass through the speed of the animation through this parameter. It can either be a string (e.g. &apos;fast&apos;) or a number (e.g. 300). The default value is <stong>&apos;slow&apos;</strong></p>
+				</div>
+				<div class="column_4">
+					<h3>override</h3>
+					<p class="readable">The plugin works by grabbing the <em>href</em> attribute of the selected element and setting that as the scroll-to position. You can however override this functionality by passing the <em>id</em> of the element you wish to scroll to. The default value is <strong>null</strong>.</p>
+				</div>	
+				<div class="column_4">
+					<h3>easing</h3>
+					<p class="readable">With the latest version, the plugin now supports easing algorithms, which you can include with <a href="http://jqueryui.com/">JQuery UI</a>. The default value is <strong>null</strong>.</p>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="column_4">
+					<p class="code">$('#selector').scrollTo({<br />
+			                        &nbsp;&nbsp;&nbsp;&nbsp;offset: 50<br />
+									});</p>
+				</div>
+				<div class="column_4">
+					<p class="code">$('#selector').scrollTo({<br />
+			                        &nbsp;&nbsp;&nbsp;&nbsp;speed: 500<br />
+									});</p>
+				</div>
+				<div class="column_4">
+					<p class="code">$('#selector').scrollTo({<br />
+			                        &nbsp;&nbsp;&nbsp;&nbsp;override: '#differentSelector'<br />
+									});</p>
+				</div>
+				<div class="column_4">
+					<p class="code">$('#selector').scrollTo({<br />
+			                        &nbsp;&nbsp;&nbsp;&nbsp;easing: 'easeOutBounce'<br />
+									});</p>
+				</div>
+			</div>
+			<div id="demo" class="row">
+				<nav>
+				<ul>
+					<li class="demo">Demos:</li>
+					<li><a href="#default" id="defaultLink" class="yellow">Default Scroll</a></li>
+					<li><a href="#offset" id="offsetLink" class="yellow">With Offset of -100</a></li>
+					<li><a href="#fast" id="fastLink" class="yellow">Fast Scroll</a></li>
+					<li><a href="#slow" id="slowLink" class="yellow">Really Slow Scroll</a></li>
+					<li><a href="#ease" id="easeOut" class="yellow">Easing with bounce</a></li>
+				</ul>
+			</nav>
+			</div>
+			<div id="default" class="section row">
+				<h2>Default settings<span class="code ml">$('#defaultLink').scrollTo();</span><a class="back" href="#demo">back</a></h2>
+				<div class="column_2"><p>Cool, an alien. Has your race taken over the earth yet? You mean while I'm sleeping in it? A true inspiration for the children. No, it is the bad kind of puppy. Sure, blame the wizards!</p><p>Daylight and everything. No! Yes, except the Dave Matthews Band doesn't rock. Well, let's just dump it in the sewer and say we delivered it. I guess because my parents keep telling me to be more ladylike. As though!</p><p>Bathroom. Which of the following would you most prefer? A: a puppy, B: a pretty flower from your sweetie, or C: a large properly formatted data file? Hey dad, bite my shiny metal ass! </p><p>There's no part of that sentence I didn't like! When you do things right, people won’t be sure you’ve done anything at all. You guys realize you live in a sewer, right? File not found. Go. Go now, before I beg you to stay! It's hopeless! Abandon ship!</p><p>Would you censor the Venus de Venus just because you can see her spewers? Oh, my, no. The only lies worth believing are the ones in the Bible. Quite possible. We live long and are celebrated poopers. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV. But then the winter came, and the grasshopper died, and the octopus at</p></div>
+				
+				<div class="column_2"><p>Tell her she looks thin. Like the deadly Prius. Do a flip! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus?</p><p>But I know you in the future. I cleaned your poop. You've killed me! Oh, you've killed me! Really?! Nay! Haven't I seen you in some copyrighted movie? No, that's what being a magical elf is all about!</p><p>I'm an alien, alright? Let's drop the subject. Yup! Bender, hurry! This fuel's expensive! Also, we're dying! Yeah, I do that with my stupidness. No, I just work here.</p><p>It's okay, Bender. I like cooking too. No, Scruffy, I am Washbucket. I love you. Washbucket has always loved you! eela:Something's wrong. It's too quiet. No! The kind with looting and maybe starting a few fires! You wouldn't. Ask anyway!</p><p>You don't know how to do any of those. Oh yeah, good luck with that. Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo! Bender, I didn't know you liked cooking. That's so cute.</p></div>
+			
+			</div>
+			<div id="offset" class="section row">
+				<h2>With an offset of -100<span class="code ml">$('#offsetLink').scrollTo({ offset:-100 });</span><a class="back" href="#demo">back</a></h2>
+				<div class="column_3"><p>Shut up, I am not. Hey, Don. Can I have one of those buttons? Who are you? 'Cause I don't feel good! Do you think I look old enough? If I win, you can be my secretary or something.</p><p>Then who you gonna vote for? Grandma just called and said you're supposed to go home. Whatever I feel like I wanna say! Is she hot? Well, is anyone else here? I'm trying to earn money for college.</p><p>Yes. Who's she? Build her a cake or something. Maybe I will, GOSH! Let me tell you about something. While you're out there playing patty cake with your friend Pedro, your Uncle Rico is making 120 bucks.</p><p>Yeah, I took her to the mall to get some glamour shots for her birthday one year. I'm votin' for Pedro Sanchez, who do you think? Everybody at school thinks I'm a frickin' IDIOT because of you! How long did it take you to grow that moustache? She didn't tell me anything.</p><p>Yeah, right. Who's the only one here knows illegal ninja moves from the government? What kind of gun did you use? Fine! Heck yes! I'd vote for you.</p></div>
+				<div class="column_3"><p>I could kick your butt, Napoleon, so I'd shut up. Well, things are getting pretty serious right now. I mean, we chat online for, like, two hours every day, so I guess you could say things are gettin' pretty serious. Knock it off, Napoleon! Make yourself a dang quesadilla! All right, you just start a little earlier, that's all. Or else work afterwards. How long is the chat room?</p><p>Hey, Don. Did you take a dump in your bed last night? Did you draw her a picture? And here we have some boondoggle keychains. A must-have for this season's fashion. Why the heck you throwin' crap at my van, Napoleon?! Are you guys are, like, Pedro's cousins with all the sweet hook-ups? Come on. Give me some of your tots.</p><p>So me and you are pretty much friends by now, right? Hey, lemme borrow your bike! Vote for Summer. Maybe I will, GOSH! Well, you have a sweet bike, and you're really good at hooking up with chicks. Plus you're,like, the only guy at school who has a mustache. Napoleon, give me some of your tots.</p><p>Yessssss. Well, when I came home from school, my head started to get really hot. So I drank some cold water, but it didn't do nothing. So I laid in the bathtub for a while, but then I realized that it was my hair that was making my head so hot. So I went in the kit Such an idiot! No. Why don't you go tell your mom to shut up? Yeah, right, I'm not voting for her.</p><p>What about your girlfriend? It's a free country. I can do whatever I want. Everybody at school thinks I'm a frickin' IDIOT because of you! No. I'm freakin' starved. I didn't get to eat anything today.</p>
+</div>
+				<div class="column_3"><p>I'm just gonna go get my ID. Well, will you do me a favor then? Can you bring me my ChapStick? But my lips hurt real bad! See ya.</p><p>It's pretty cool, I guess. What do you need? No, she doesn't know anything... Will you just come get me? I wish you'd get out of my life and shut up! Since when, Kip? You have the worst reflexes of all time. Hey, can I use your guys's phone for a sec?</p><p>I'm not gonna use hers, you sicko! Hey, lemme borrow your bike! And here we have some boondoggle keychains. A must-have for this season's fashion. My woman I'm taking to the dance. Try and hit me, Napoleon. Ughhhhhhhhhhhhh...</p><p>I like her bangs. Did you shoot any? No. Jeez, sometimes up to 3 or 4 hours maybe... maybe not... Geez, yeah right, Napoleon. I made, like, 75 bucks today.</p><p>Did you just say something about my mom? You guys are retarded! Well, what is there to eat? That's my ride. Do you think I look old enough? How long did it take you to grow that moustache?</p></div>
+			
+			</div>
+			<div id="fast" class="section row">
+				<h2>With a fast animation<span class="code ml">$('#fastLink').scrollTo({ speed: 'fast' });</span><a class="back" href="#demo">back</a></h2>
+				<div class="column_4"><p>I've known people from Aerelon. You don't sound anything like them. Our parents would mourn them. They'd love them more anyway. The difference is, my flaws are personal, yours are professional. I LOVE KARA THRACE! AND I DON'T CARE WHO FRAKKING KNOWS! Me? Is this some kind of joke? I know who you are, Felix. I know who you are.</p><p>Belonged to my father. Foolish to think a hunk of metal could keep him safe. I'm gonna- Okay, here we go again. Lee Adama… This is a witch-hunt. I will not have it aboard my ship. Never crossed my mind, Madam President.</p><p>Thanks. I know that I didn't have to face any of the situations that she did. I had the President in my face, arguing for the survival of the civilian fleet. I've Colonel Tigh keeping me honest, balancing my morality and my tactics. And I had you. Now...you don't So, what's the charge this time? By taking the Raider, you've placed our people on the surface of Kobol in direct danger. How old were you?</p></div>
+				<div class="column_4"><p>What do you want to do now, Captain? Why can't we use the starboard launch tube? This case, this case is built on emotion, on anger, bitterness, but most of all it's built on shame. It's about the shame of what we did to ourselves back on that planet. It's about the guilt of those of us who ran away, who ran away. And we are trying to You shot at her and missed at close range. What are you doing? Are you just gonna lie down and quit? You're the one who made me believe in this- Remember that, as you take command of "The Beast". Garner was my decision; his failures, my responsibility. Don't let me fail a second time. Congratulations, Commander.</p><p>All right, people, let's move! Out! Let's go! You too, Commander. I can't... I can't kill him. I can't kill the bastard. I can't. I can't. Ideas always seem strange until you try them on, brother. We had a temper-tantrum in the form of a cataclysm because we wanted them to treasure us, the Ones, more than humanity. More than their own history and blood. Doctor, I need your help, but it's illegal, dangerous, and a violation of your oath as an officer. Yeah, you point finger back far enough and some germ gets blamed for splitting in two. But we're killing them, I mean truly killing them. My own sisters.</p><p>You all right? It just speaks nonsense, doesn't it? It stopped... Well, it's not like anybody'll hear. We're in your cabin in the forest, right? Don't. Don't make me cry on my own hangar deck. In all your travels, have you ever seen a star go supernova?</p></div>
+				<div class="column_4"><p>What the hell are you doing here? You're supposed to be in the CIC. I made a choice to wear a uniform, to be a person. Admiral, Galactica is launching Vipers and a Raptor. It's not unknown. I know where it is! Earth. The most guarded secret we have. The location was only known by the senior commanders of the fleet, and we dare not share it with the public. Not while there was a Cylon threat upon us. For now we have a refuge</p><p>Which is what exactly? Jack, I want to transfer a detachment of marines to Galactica and I want you to hand-pick them. Completely reliable. Completely loyal. Razors. Did he ask about me? Gaius? This has nothing to do with you. Okay? You think that's what I am? That's what I've become? That's my defining characteristic, the guy married to a Cylon? No. A tyrant craves power for its own sake. And all Laura wants is to save us all. You and I talked about this.</p><p>I just joined to pay for dental school. You're still standing. The test... right. I think people in sensitive positions should go first. I don't have to listen. I'm the President.</p></div>
+				<div class="column_4"><p>We're here because the majority of the Cylons felt that the slaughter of mankind had been a mistake. Now tell me you believe in me. Tell me you believe in my strength. This is mutiny. You know that. alen Tyrol:All I know is if there is a God, he's laughin' his ass off. I'm sorry, you're God? Wow... nice to meet ya. That's good, that's good. We'll give you a couple of minutes for that. You would rather that we run?</p><p>There's this one song that he taught me, it made me feel happy and sad all at the same time. They butchered innocent civilians, Dad. Come on. How can you ignore that? Ummm. I have my flaws too. I hear they're still eating paper. Is that true? Vigorously.</p><p>We're not entirely defenseless. Some of our ships are armed. We should take steps to arm the others just in case. I know that God loved you more than all other living creatures and you repaid His divine love with sin, with hate, corruption, evil. So then He decided to create the Cylons. The Cylons will kill every godsdamn hostage before we put one pair of boots aboard their ship. Laura Roslin will be the next to die, Bill. They can trust their God to watch over their immortal souls.</p></div>
+			</div>
+			<div id="slow" class="section row">
+				<h2>With a slow animation<span class="code ml">$('#slowLink').scrollTo({ speed: 5000 });</span><a class="back" href="#demo">back</a></h2>
+					<div class="column_2"><p>Ultimately Jenna will care for you for who you are, not what you imitate out of a book. You are half human? Not, I think, today, Commander. The very notion that a Cardassian could have anything in common with a Klingon... it turns my stomach. The technique of a desperate man.</p><p>Considering the marvellous complexity of the universe, its clockwork perfection, its balances of this against that... matter, energy, gravitation, time, dimension, I believe that our existence must be more than either of these philosophies. That what we a Where none have gone before. Data, find a way to defeat that shield. It's just a science project.</p><p>Truth, beauty, works for a lot of things. You're not quite uh...human, are ya? Absurd! We carry the membership! We can brook no delay! Computer. What is the nature of the universe? One thing is clear: you'll never look at your hairline the same way again. I am superior, sir, in many ways, but I would gladly give it up to be human.</p><p>I wonder if the Emperor Honorius watching the Visigoths coming over the seventh hill could truly realize that the Roman Empire was about to fall. This is really just another page of history, isn't it? Will this be the end of our civilization? Turn the pag We have analyzed your defensive capabilities as being unable to withstand us. If you defend yourselves, you will be punished. We found that world uninhabited. The life-forms we left there had... had sought the challenge-- at least, that is the basic reason-- had sought the challenge of creating a new lifestyle-- a new society there. Life on our world is driven to protect itself There are times, sir, when men of good conscience cannot blindly follow orders. You acknowledge their sentience, but ignore their personal liberties and freedom. Order a man to turn his child over to the state? Not while I'm his captain.</p><p>You know, a doctor friend once said the same thing to me. Frankenstein was his name. Chief medical officer's log, supplemental...Scientists believe no experiment is a failure, that even a mistake advances the evolution of understanding. But all achievement has a price. For one brief glance at the mysterious blueprint of human evolution, t Collecting on an old debt. I've encountered many who are more credibly to be called the devil than you.</p><p>This goes against my better judgment. Transporter Room 3, lock onto Shuttle 1 and beam it back into its bay. All right, try this. An excellent reason to escape. Will you at least try to stay out of trouble?</p></div>
+					<div class="column_2"><p>I understand. Yes. Yet you have chosen a Vulcan way of life? The Captain and many of the crew are not yet convinced he is truly human.</p><p>But you did more at the world you just left. Why have you left your own life-forms there? Let's go find that beacon. Keep notes. This project might turn out to be of interest to future scholars. Mr. Castillo. Theoretically, it is possible... To judge what kind of life-forms we are?</p><p>The first duty of every Starfleet officer is to the truth, whether it's scientific truth or historical truth or personal truth! It is the guiding principle on which Starfleet is based! If you can't find it within yourself to stand up and tell the truth ab I believe so. I will make another attempt. He wants to do something nice for me. How would they react?</p><p>It is possible to commit no mistakes and still lose. That is not a weakness; that is life. In the hands of a con artist, fear can be used to motivate obedience, capitulation, the exploitation of innocent people - and that is what I believe has happened here and I intend to prove that. "There was a young lady from Venus, whose body was shaped like a..." My programming may be inadequate to the task. A strategy? With fist open? With fist open...</p><p>I don't know I've just been paid a visit by Q. I do not see it. It is interesting that people try to find meaningful patterns in things that are essentially random. I have noticed that the images they perceive sometimes suggest what they are thinking about at that particular moment. Besides, it is cle Oh yes, that's how it starts, but the road from legitimate suspicion to rampant paranoia is very much shorter than we think. It is perhaps not what we would understand as a vessel, sir. The dimensions this one occupies allows them to be... well, to be in several places at once, that they consider that this entire star cluster is theirs. It was probably unwise of us to attempt t</p><p>Well, they seem to have a somewhat exaggerated opinion of me. They know everything I know, sir. Then I don't understand why you're unwilling . Affirmative. Oh, no. This is as real as your so-called "life" gets. </p></div>
+			</div>
+			<div id="ease" class="section row">
+				<h2>With easing<span class="code ml">$('#fastLink').scrollTo({ easing: 'easeOutBounce', speed: 2000 });</span><a class="back" href="#demo">back</a></h2>
+				<div class="column_4"><p>What about your girlfriend?  Hey, how's it goin'? Those egg rolls are looking pretty good. I might get me some later, I don't have any money right now. You know, I think I'm just gonna get me one of them lotto tickets. My wife says I gotta stop but I'm just feeling real positive tod Can you just go get her for me? Well, you have a sweet bike, and you're really good at hooking up with chicks. Plus you're,like, the only guy at school who has a mustache. No, I ride my bike. Do you think I look old enough?</p><p>It's a Sledgehammer. If I win, you can be my secretary or something. No. See for yourself.  I wish you'd get out of my life and shut up!</p><p>I'm waiting for Kip. Why are you so sweaty? I'm just gonna go get my ID.  Heck yes! I'd vote for you. Are you guys are, like, Pedro's cousins with all the sweet hook-ups? No, Napoleon.  Hi.</p></div>
+				<div class="column_4"><p>If I win, you can be my secretary or something. Do you ride the bus to school? Shut up, I am not. Stay home and eat all the freakin' chips, Kip!</p><p>I'll get it.  I'm not gonna use hers, you sicko! Well, you have a sweet bike, and you're really good at hooking up with chicks. Plus you're,like, the only guy at school who has a mustache. No, she doesn't know anything... Will you just come get me? That girl over there.</p><p>That's my ride. Hey, Don. Did you take a dump in your bed last night? Yessssss. Do you think I look old enough? That's true. I told you! I spent it with my uncle in Alaska hunting wolverines!</p></div>
+				<div class="column_4"><p>Correct.  Hey, Napoleon. Did you wet the bed last night? It's pretty much my favorite animal. It's like a lion and a tiger mixed... bred for its skills in magic. I'm really busy right now. Vote for Summer.</p><p>Whatever I feel like I wanna say! Practicing what? Did you just say something about my mom? No. Not unless she likes fish.</p><p>Get off my property! Trisha. Because my uncle Rico's an IDIOT. Whatever I feel like I wanna do. Gosh!</p><p>Did you shoot any? Deb just called me. She pretty much hates me by now. Why don't you go eat a decroded piece of crap! Just borrow some from the school nurse. I know she has, like, five sticks in her drawer. You guys are retarded!</p></div>
+				<div class="column_4"><p>That's right.  Hey, Napoleon. Did you wet the bed last night? What are you doing here? Whatever I feel like I wanna do. Gosh! I don't feel very good.   Hi.</p><p>What? What kind of bike do you have? Ohhhh, man, I wish I could go back in time. I'd take state. A couple of days. I'm not gonna use hers, you sicko! Why don't you go eat a decroded piece of crap!</p><p>Can you just go get her for me? Yeah, right. Who's the only one here knows illegal ninja moves from the government? Your current event, Napoleon. No. How long did it take you to grow that moustache? Hey, lemme borrow your bike!</p><p> This tastes like the cow got into an onion patch. Well, you have a sweet bike, and you're really good at hooking up with chicks. Plus you're,like, the only guy at school who has a mustache. I wish you'd get out of my life and shut up! No, I ride my bike. A liger. Who's she?</p></div>
+			</div>
+		</div>
+	</div>
+	<footer>
+			<div class="fl ml">An <a href="http://www.individual11.com">individual11</a> production</div>
+			<div class="fr mr">All placeholder copy from <a href="http://www.individual11.com/quotesum/">Lorem Quotesum</a></div>
+		</footer>
+</body>
+<!-- jQuery --> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="_/js/jquery-1.6.1.min.js">\x3C/script>')</script>
+	<script src="_/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src="_/js/scrollTo.min.js"></script> 
+	<!-- <script src="scrollTo.js"></script>  -->
+	<script src="_/js/functions.js"></script>
+	
+	<!-- ASYNC google analytics --> 
+	<script> 
+	var _gaq = [['_setAccount', 'UA-7820155-9'], ['_trackPageview']];
+	(function(d, t) {
+	var g = d.createElement(t),
+	s = d.getElementsByTagName(t)[0];
+	g.async = true;
+	g.src = '//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g, s);
+	})(document, 'script');
+	</script> 
+
+</html>
