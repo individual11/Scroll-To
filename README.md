@@ -29,3 +29,6 @@ $('#selector').scrollTo({
 	easing: 'easeOutBounce'
 });
 ```
+###License
+
+MIT [http://rem.mit-license.org](http://rem.mit-license.org)
