@@ -22,3 +22,10 @@ The JQuery code is pretty straight forward as well.
 *	offset - this allows you to offset the stop position plus or minus in pixels. The default is __0__.
 *	speed - controls the speed of the scrolling, and supports any viable Jquery animation speed (i.e. 'fast' or 5000). The default is __'slow'__. 
 *	override - this will allow you to override the default anchor scroll to position. The default is __null__.
+*	easing - if you include [JQuery UI](http://jqueryui.com/), you can use their easing equations like the following block of code.
+
+```javascript
+$('#selector').scrollTo({
+	easing: 'easeOutBounce'
+});
+```
