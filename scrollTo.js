@@ -4,13 +4,14 @@ Author: David Vogeleer
 Site: http://www.individual11.com/
 Description: animated scroll to anchor
 
-Version: 0.2
+Version: 0.3
 
 **THANKS:
 
 -> solution for setting the hash without jumping the page -> Lea Verou : http://leaverou.me/2011/05/change-url-hash-without-page-jump/
 -> Add stop  - Joe Mafia
 -> add some easing - Daniel Garcia
+-> added use strict, cleaned up some white space adn added conditional for anchors without hashtag -> Bret Morris, https://github.com/bretmorris
 
 **TODO:
 -> Add hashchange support, but make it optional http://leaverou.me/2011/05/get-your-hash-the-bulletproof-way/
