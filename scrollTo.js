@@ -45,7 +45,6 @@ Version: 0.2
                 //if the browser supports it, we push the hash into the pushState for better linking later
                 if(history.pushState){
                     history.pushState(null, null, idToLookAt);
-                    console.log(settings.easing);
                     $('html,body').stop().animate({scrollTop: $(idToLookAt).offset().top + settings.offset}, settings.speed, settings.easing);
                 }else{
                     //if the browser doesn't support pushState, we set the hash after the animation, which may cause issues if you use offset
