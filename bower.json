@@ -1,0 +1,26 @@
+{
+  "name": "Scroll-To",
+  "version": "0.3.0",
+  "homepage": "https://github.com/individual11/Scroll-To",
+  "authors": [
+    "individual11 <david@individual11.com>"
+  ],
+  "description": "JQuery plugin to make animated scrolling easy to setup and use.",
+  "main": "scrollTo.js",
+  "keywords": [
+    "JQuery",
+    "JQuery Plugin",
+    "Scroll-to"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
