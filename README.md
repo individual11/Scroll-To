@@ -4,6 +4,13 @@
 [See it in action.](http://individual11.github.io/Scroll-To/ "Scroll To Plugin")
 
 * * *
+##Installation
+You can install Scroll-To through [bower](http://bower.io/) by running the following command in terminal.
+
+	$ bower install Scroll-To
+
+* * *
+
 
 ##HTML setup
 
